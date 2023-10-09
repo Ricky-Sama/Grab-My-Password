@@ -1,14 +1,14 @@
 let noteTitle;
 let noteText;
-let saveNoteBtn;
-let newNoteBtn;
-let noteList;
+let savePassBtn;
+let newPassBtn;
+let PassList;
 
-if (window.location.pathname === '/notes') {
-  noteTitle = document.querySelector('.note-title');
-  noteText = document.querySelector('.note-textarea');
-  saveNoteBtn = document.querySelector('.save-note');
-  newNoteBtn = document.querySelector('.new-note');
+if (window.location.pathname === '/password') {
+  noteTitle = document.querySelector('.pass-title');
+  noteText = document.querySelector('.pass-textarea');
+  saveNoteBtn = document.querySelector('.save-pass');
+  newNoteBtn = document.querySelector('.new-pass');
   noteList = document.querySelectorAll('.list-container .list-group');
 }
 
@@ -25,7 +25,7 @@ const hide = (elem) => {
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
-const getNotes = () =>
+const getPassword = () =>
   fetch('/api/notes', {
     method: 'GET',
     headers: {
