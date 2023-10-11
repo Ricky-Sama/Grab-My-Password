@@ -2,11 +2,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
 *{
+<<<<<<< HEAD
+        font-family: 'Inter', sans-serif;
+        font-family: 'Poppins', sans-serif;
+        font-family: 'Ubuntu', sans-serif;
+}
+
+.body {
+        flex: 4;
+        background-color: #a1e969;
+        padding: 50px;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+}
+=======
     font-family: 'Inter', sans-serif;
     font-family: 'Poppins', sans-serif;
     font-family: 'Ubuntu', sans-serif;
 }
 
+>>>>>>> main
 
 header {
     padding: 40px;
@@ -27,6 +44,17 @@ nav {
 }
   
 nav a {
+<<<<<<< HEAD
+color: var(--light);
+padding: 14px 20px;
+text-decoration: none;
+text-align: center;
+}
+  
+nav a:hover {
+color: var(--secondary);
+background-color: var(--dark);
+=======
     color: var(--light);
     padding: 14px 20px;
     text-decoration: none;
@@ -36,6 +64,7 @@ nav a {
 nav a:hover {
     color: var(--secondary);
     background-color: var(--dark);
+>>>>>>> main
 }
 
 /* Responsive layout */
@@ -50,6 +79,8 @@ nav a:hover {
         padding: 10px;
     }
 }
+<<<<<<< HEAD
+=======
 
 main {
     background-color: #28a745;
@@ -98,3 +129,4 @@ main {
   main .container .col:after {
     right: 0;
   }
+>>>>>>> main
