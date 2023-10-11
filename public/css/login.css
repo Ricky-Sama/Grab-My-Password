@@ -1,29 +1,21 @@
-/* ****************** Goolge Fonts ********************************************* */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
-*{
-<<<<<<< HEAD
-        font-family: 'Inter', sans-serif;
-        font-family: 'Poppins', sans-serif;
-        font-family: 'Ubuntu', sans-serif;
-}
-
-.body {
-        flex: 4;
-        background-color: #a1e969;
-        padding: 50px;
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
-        align-items: center;
-}
-=======
+* {
     font-family: 'Inter', sans-serif;
     font-family: 'Poppins', sans-serif;
     font-family: 'Ubuntu', sans-serif;
 }
 
->>>>>>> main
+.body {
+    flex: 4;
+    background-color: #a1e969;
+    padding: 50px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
 
 header {
     padding: 40px;
@@ -31,40 +23,28 @@ header {
     background: var(--primary);
     color: var(--light);
 }
-  
+
 main {
-display: flex;
-flex-wrap: wrap;
-flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
 }
 
 nav {
     display: flex;
     background-color: var(--secondary);
 }
-  
+
 nav a {
-<<<<<<< HEAD
-color: var(--light);
-padding: 14px 20px;
-text-decoration: none;
-text-align: center;
-}
-  
-nav a:hover {
-color: var(--secondary);
-background-color: var(--dark);
-=======
     color: var(--light);
     padding: 14px 20px;
     text-decoration: none;
     text-align: center;
 }
-  
+
 nav a:hover {
     color: var(--secondary);
     background-color: var(--dark);
->>>>>>> main
 }
 
 /* Responsive layout */
@@ -79,39 +59,37 @@ nav a:hover {
         padding: 10px;
     }
 }
-<<<<<<< HEAD
-=======
 
 main {
     background-color: #28a745;
     padding: 50px 0;
-  }
-  
-  main .container {
+}
+
+main .container {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-  }
-  
-  main .container .row {
+}
+
+main .container .row {
     margin: 0;
-  }
-  
-  main .container .col {
+}
+
+main .container .col {
     padding: 50px;
-  }
-  
-  main .container .col:first-child {
+}
+
+main .container .col:first-child {
     padding-top: 75px;
-  }
-  
-  main .container .col:last-child {
+}
+
+main .container .col:last-child {
     padding-bottom: 75px;
-  }
-  
-  main .container .col:before,
-  main .container .col:after {
+}
+
+main .container .col:before,
+main .container .col:after {
     content: "";
     display: block;
     position: absolute;
@@ -119,14 +97,13 @@ main {
     bottom: 0;
     width: 50%;
     background-color: #28a745;
-    z-index: -1;
-  }
-  
-  main .container .col:before {
+}
+
+
+main .container .col:before {
     left: 0;
-  }
-  
-  main .container .col:after {
+}
+
+main .container .col:after {
     right: 0;
-  }
->>>>>>> main
+}
