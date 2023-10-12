@@ -16,7 +16,7 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    user: {
+    username: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -54,5 +54,11 @@ User.init(
     modelName: 'user',
   }
 );
+
+User.hasMany(Website, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
+});
+
 
 module.exports = User;
