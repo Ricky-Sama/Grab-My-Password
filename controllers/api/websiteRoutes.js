@@ -28,6 +28,11 @@ router.get('/', withAuth, async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
+
+    //Render the website data to the homepage
+    res.render('userLoggedIn', {
+        title: 'Passwords Grabbed!'
+    })
 });
 
 // PUT route to update a website's detales using its ID
