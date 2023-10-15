@@ -1,22 +1,27 @@
 // const sequelize = require('../config/connection');
 require('dotenv').config();
 const { User, Website } = require('../models');
-const seedUser = require('./user-seeds');
-const seedWebsite = require('./website-seeds');
+const seedUser = require('./user-seeds.json');
+const seedWebsite = require('./website-seeds.json');
 
 const sequelize = require('../config/connection');
 
-const seedAll = async () => {
-    await sequelize.sync({ force: true });
-    console.log('\n----- DATABASE SYNCED -----\n');
-    await seedUser();
-    console.log('\n----- USER SEEDED -----\n');
-  
-    await seedWebsite();
-    console.log('\n----- WEBSITE SEEDED -----\n');
-  
-  
+const seedDatabase = async () => {
+  await sequelize.sync({ force: true });
+
+  const users = await User.bulkCreate(seedUser, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  for (const project of seedWebsite) {
+    await Website.create({
+      ...project,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
+    });
+  }
+
     process.exit(0);
   };
   
-  seedAll();
+  seedDatabase();
