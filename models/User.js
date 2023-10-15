@@ -56,10 +56,5 @@ User.init(
   }
 );
 
-// User.hasMany(Website, {
-//   foreignKey: 'user_id',
-//   onDelete: 'CASCADE',
-// });
-
 
 module.exports = User;
