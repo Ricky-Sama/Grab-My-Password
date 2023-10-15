@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "seed": "node seeds/seed.js"
+    "seeds": "node seeds/seed.js"
   },
   "name": "grab-my-password",
   "description": "password manager",
