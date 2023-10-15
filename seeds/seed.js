@@ -1,3 +1,6 @@
+// const sequelize = require('../config/connection');
+require('dotenv').config();
+const { User, Website } = require('../models');
 const seedUser = require('./user-seeds');
 const seedWebsite = require('./website-seeds');
 
