@@ -48,11 +48,4 @@ Website.init(
   }
 );
 
-// establishing relationship between tables
-const User = require('./User');  // Import User model
-Website.belongsTo(User, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE',  // ensures that a website's data also gets deleted when the user is deleted
-});
-
 module.exports = Website;
