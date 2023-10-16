@@ -1,24 +1,21 @@
-const e = require("express");
-const express = require("express"); /// ! Is this supposed to be here ! ///
-
 ////// DOM element and attached preventDefault() to prevent the default form behavior, which would cause the page to reload. /////////////////////
 const loginForm = document.querySelector('#login-form');
 const loginFormHandler = async (event) => {
-event.preventDefault();
+    event.preventDefault();
 
-if (username && email && password) {
-    const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
+    if (username && email && password) {
+        const email = document.querySelector('#email-login').value.trim();
+        const password = document.querySelector('#password-login').value.trim();
 
 
-    const response = await fetch('/api/user/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
+        const response = await fetch('/api/user/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password }),
     });
 
     if (response.ok) {
-        document.location.replace('/dashboard');
+        window.location.replace('');
     }   else { 
         alert('Failed to log in.');
     }
