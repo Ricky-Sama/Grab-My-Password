@@ -1,3 +1,4 @@
+const loginForm = document.querySelector('#login-form');
 const loginFormHandler = async (event) => {
 event.preventDefault();
 
