@@ -1,25 +1,40 @@
+const e = require("express");
+const express = require("express"); /// ! Is this supposed to be here ! ///
+
+////// DOM element and attached preventDefault() to prevent the default form behavior, which would cause the page to reload. /////////////////////
 const loginForm = document.querySelector('#login-form');
 const loginFormHandler = async (event) => {
 event.preventDefault();
 
-const email = document.querySelector('#email-login').value.trim();
-const password = document.querySelector('#password-login').value.trim();
+if (username && email && password) {
+    const email = document.querySelector('#email-login').value.trim();
+    const password = document.querySelector('#password-login').value.trim();
 
-if (email && password) {
+
     const response = await fetch('/api/user/login', {
-    method: 'POST',
-    body: JSON.stringify({ email, password }),
-    headers: { 'Content-Type': 'application/json' },
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
     });
 
     if (response.ok) {
-    document.location.replace('/');
-    } else {
-    alert('Failed to log in.');
+        document.location.replace('/dashboard');
+    }   else { 
+        alert('Failed to log in.');
     }
 }
-};
+}; 
+/////////////////// Defines the loginFormHandler() function to handle form for submission  ////////////////////////////////////////////////////////////////////////////////////////////
+function loginFormHandler(event) {
+    event.preventDefault();     // Prevent page reload //    
+  }
+  
+  if (loginForm) {
+    loginForm.addEventListener('submit', loginFormHandler);
+  };
 
+/////////////////// Refers to signUp.handlebars ////////////////////////////////////////////////////////////////////////////////////////////
+const signupForm = document.querySelector('.signup-form');
 const signupFormHandler = async (event) => {
 event.preventDefault();
 
@@ -46,11 +61,17 @@ if (username && email && password) {
     }
 }
 };
+/////////////////// Defines the signupFormHandler() function to handle form for submission  ////////////////////////////////////////////////////////////////////////////////////////////
+function signupFormHandler(event) {
+    event.preventDefault();
+}
 
-document
-.querySelector('.login-form')
-.addEventListener('submit', loginFormHandler);
+if (signupForm) {
+    signupForm.addEventListener('submit', signupFormHandler);
+}
 
-document
-.querySelector('.signup-form')
-.addEventListener('submit', signupFormHandler);
+/////////////////// Block commented out for now ////////////////////////////////////////////////////////////////////////////////////////////
+
+// document
+// .querySelector('.signup-form')
+// .addEventListener('submit', signupFormHandler);
