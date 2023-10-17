@@ -18,26 +18,52 @@
             <form id="add-website-form">
                 <div class="form-group">
                     <label for="websiteName">Website Name:</label>
-                    <input type="text" id="website_name" name="websiteName" class="form-control" required>
+                    <input type="text" id="website_name" name="websiteName" value="" required>
                 </div>
                 <div class="form-group">
                     <label for="websiteURL">Website URL:</label>
-                    <input type="url" id="website_url" name="websiteURL" class="form-control" required>
+                    <input type="url" id="website_url" name="websiteURL" value="" required>
                 </div>
                 <div class="form-group">
                     <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" class="form-control" required>
+                    <input type="text" id="username" name="username" value="" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" class="form-control" required>
+                    <input type="password" id="password" name="password" value="" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Add Website</button>
+                {{!-- changed to button id="btnSave" from button class="submit" --}}
+                <button id="btnSave" class="btn btn-primary">Add Website</button>  
             </form>
             <hr> <!-- Horizontal line to separate form and list -->
             <h4>My Websites</h4>
             <!-- List of Websites -->
-            <ul class="list-group">
+            <div id="display">
+              <p>
+                <button id="btnExport">Export</button>
+              </p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Website Name</th>
+                    <th>Website URL</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                  </tr>
+                </thead>
+                <tbody> 
+                  {{!-- <tr data-row="0">
+                    <td data-col="0" data-name="website_name">Website Name</td>
+                    <td data-col="1" data-name="website_url">Website URL</td>
+                    <td data-col="3" data-name="username">Username</td>
+                    <td data-col="4" data-name="pasword">Password</td>
+                  </tr>  --}}
+                  
+                </tbody>
+              </table>
+            </div>
+
+            {{!-- <ul class="list-group">
               {{#each websites}}
               <li class="list-group-item">
                 <a href="#" class="website-link" data-toggle="collapse" data-target="#website-{{ id }}" aria-expanded="false" aria-controls="website-{{ id }}">{{ website_name }}</a>
@@ -48,7 +74,7 @@
                 </div>
               </li>
               {{/each}}
-            </ul>
+            </ul> --}}
           </div>
         </div>
       </div>
