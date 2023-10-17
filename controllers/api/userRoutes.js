@@ -1,7 +1,11 @@
 const router = require('express').Router();
 const { User }  = require('../../models');
 
-
+router.get(`/`,async (req, res) =>{
+    const userData = await User.findAll();
+    res.json(userData)
+  })
+  
 //route to create/add a User using async await
 
 router.post('/', async (req, res) => {
