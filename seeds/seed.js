@@ -1,10 +1,10 @@
-// const sequelize = require('../config/connection');
-require('dotenv').config();
+require('dotenv').config({ path: '../.env'});
+const sequelize = require('../config/connection');
+
 const { User, Website } = require('../models');
 const seedUser = require('./user-seeds.json');
 const seedWebsite = require('./website-seeds.json');
 
-const sequelize = require('../config/connection');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -21,7 +21,7 @@ const seedDatabase = async () => {
     });
   }
 
-    process.exit(0);
-  };
+  process.exit(0);
+};
   
   seedDatabase();
