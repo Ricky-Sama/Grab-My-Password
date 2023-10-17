@@ -11,7 +11,32 @@
             </form>
           </div>
           <div class="card-body">
+            <!-- My Websites Title -->
+            
+            <!-- Form to Add New Websites -->
+            <h5>Add New Website</h5>
+            <form id="add-website-form">
+                <div class="form-group">
+                    <label for="websiteName">Website Name:</label>
+                    <input type="text" id="websiteName" name="websiteName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="websiteURL">Website URL:</label>
+                    <input type="url" id="websiteURL" name="websiteURL" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Website</button>
+            </form>
+            <hr> <!-- Horizontal line to separate form and list -->
             <h4>My Websites</h4>
+            <!-- List of Websites -->
             <ul class="list-group">
               {{#each websites}}
               <li class="list-group-item">
