@@ -1,6 +1,4 @@
 node_modules
 .env
-dotenv
 .DS_Store
 grab-my-password
-```
