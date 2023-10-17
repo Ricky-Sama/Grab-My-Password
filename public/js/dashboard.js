@@ -40,7 +40,16 @@ const DASH = {                           // DASH object to store data //
         console.table(DASH.data);                       // console.table to display the data in a table //
     },
     buildRow(formData) {
-        const tbody = document.querySelector('#display > table > tbody'); // select the table body //
+        const tbody = document.querySelector('#display > table > tbody'); // selectt table body //
+        const tr = document.createElement('tr');                // create table row //
+        tr.setAttribute('data-row', document.querySelectorAll('tbody tr').length); // set the data-row attribute to length of table row //
+        let col=0;
+        ///////////// loop through the form data and create a table cell for each input field ////////////////////////////////////////////
+        for(let entry of formData.entries()) {
+            tr.innerHTML += `<td data-col="${col}" data-name= "${entry[0]}">${entry[1]}</td>`; 
+            col++;
+        }
+        tbody.append(tr);     // append row to table body//
     },
     exportData(ev) {
     },
