@@ -51,6 +51,7 @@ const DASH = {                           // DASH object to store data //
         }
         tbody.append(tr);     // append row to table body//
     },
+    
     exportData(ev) {
     },
     editCell(ev) {
