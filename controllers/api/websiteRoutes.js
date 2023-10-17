@@ -6,7 +6,7 @@ const withAuth = require('../../utils/auth');
 router.post('/', withAuth, async (req, res) => {
     try {
         const websiteData = await Website.create({
-            website_name: req.body.website.name,
+            website_name: req.body.website_name,
             url: req.body.url,
             username: req.body.username,
             password: req.body.password,
