@@ -7,6 +7,7 @@ const withAuth = require('../utils/auth');
 //     res.render('homepage', { title: 'Home Page' });
 // });
 
+
 router.get('/', async (req, res) => {
     try {
         const websiteData = await Website.findAll({

@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User }  = require('../../models');
+
 
 //route to create/add a User using async await
 
@@ -35,6 +36,7 @@ router.get('/login', async (req, res) => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
             res.status(200).json({ user: userData, message: 'You are now logged in!' });
+
         });
     } catch (err) {
         res.status(400).json(err);
@@ -50,5 +52,6 @@ router.post('/logout', (req, res) => {
       res.status(404).end();
     }
   });
+
 
 module.exports = router;

@@ -1,3 +1,5 @@
+// DOM element and attached preventDefault() to prevent the default form behavior, which would cause the page to reload.
+const loginForm = document.querySelector('#login-form');
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
@@ -19,6 +21,12 @@ const loginFormHandler = async (event) => {
     }
 };
 
+if (loginForm) {
+    loginForm.addEventListener('submit', loginFormHandler);
+}
+
+/////////////////// Refers to signUp.handlebars /////////////////////
+const signupForm = document.querySelector('.signup-form');
 const signupFormHandler = async (event) => {
     event.preventDefault();
 
@@ -41,10 +49,14 @@ const signupFormHandler = async (event) => {
     }
 };
 
-document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
 
-document
-    .querySelector('.signup-form')
-    .addEventListener('submit', signupFormHandler);
+if (signupForm) {
+    signupForm.addEventListener('submit', signupFormHandler);
+}
+
+/////////////////// Block commented out for now ////////////////////////////////////////////////////////////////////////////////////////////
+
+// document
+// .querySelector('.signup-form')
+// .addEventListener('submit', signupFormHandler);
+
