@@ -9,12 +9,12 @@ const loginFormHandler = async (event) => {
     if (email && password) {
         const response = await fetch('/api/user/login', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password }),
+            headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-            window.location.replace('/');
+            document.location.replace('/userLoggedIn');
         } else {
             alert('Failed to log in.');
         }
@@ -42,12 +42,13 @@ const signupFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/userLoggedIn');
         } else {
             alert('Failed to sign up.');
         }
     }
 };
+
 
 if (signupForm) {
     signupForm.addEventListener('submit', signupFormHandler);
@@ -58,3 +59,4 @@ if (signupForm) {
 // document
 // .querySelector('.signup-form')
 // .addEventListener('submit', signupFormHandler);
+
